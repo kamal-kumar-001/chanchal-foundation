@@ -1,0 +1,112 @@
+import Link from "next/link";
+import { Disclosure } from "@headlessui/react";
+import {  scroller } from "react-scroll";
+
+export default function Navbar({navigation}) {
+   const nav = ["About US", "Vision", "Campaigns","Resourse center"];
+ if (!navigation) navigation =  nav
+
+  return (
+    <div className="w-full z-50  bg-white sticky top-0">
+      <nav className="container  flex flex-wrap items-center justify-between px-8 py-4 mx-auto lg:justify-between xl:px-4 ">
+        {/* Logo  */}
+        <Disclosure>
+          {({ open }) => (
+            <>
+              <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
+                <Link href="/">
+                  <span className="flex items-center space-x-2 text-2xl font-medium text-[#ff5722] ">
+                    <span>
+                      <img
+                        src="/logo.png"
+                        alt="logo image"
+                        // width=""
+                        // height="32"
+                        className="w-36"
+                      />
+                    </span>
+                  </span>
+                </Link>
+
+                <Disclosure.Button
+                  aria-label="Toggle Menu"
+                  className="px-2 py-1 ml-auto text-gray-500 rounded-md lg:hidden hover:text-[#ff5722] focus:text-[#ff5722] focus:bg-indigo-100 focus:outline-none ">
+                  <svg
+                    className="w-6 h-6 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24">
+                    {open && (
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+                      />
+                    )}
+                    {!open && (
+                      <path
+                        fillRule="evenodd"
+                        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                      />
+                    )}
+                  </svg>
+                </Disclosure.Button>
+
+                <Disclosure.Panel className="flex space-y-3 flex-col w-full my-5 lg:hidden">
+                  <>
+                    {navigation.map((item, index) => (
+                        <span key={index} className="w-full cursor-pointer px-4 py-2 -ml-4 text-gray-500 rounded-md  hover:text-[#ff5722] focus:text-[#ff5722] focus:bg-indigo-100 focus:outline-none "
+                        onClick={() => scroller.scrollTo(item.toLowerCase(), { smooth: true, offset: -100 })}
+                        >
+                          {item}
+                        </span>
+                    ))}
+                        <span  className="w-full cursor-pointer px-4 py-2 -ml-4 text-gray-500 rounded-md  hover:text-[#ff5722] focus:text-[#ff5722] focus:bg-indigo-100 focus:outline-none ">
+                          <Link href="/contact-us">
+                            Contact Us
+                          </Link>
+                        </span>
+                    <Link href="/donate">
+                      <button className="w-full px-6 py-2 mt-3 text-center text-white bg-[#ff5722] rounded-md lg:ml-5">
+                        Make a Contribution
+                      </button>
+                    </Link>
+                  </>
+                </Disclosure.Panel>
+              </div>
+            </>
+          )}
+        </Disclosure>
+
+        {/* menu  */}
+        <div className="hidden text-center lg:flex lg:items-center">
+          <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
+            {navigation.map((menu, index) => (
+              <li className="mr-3 nav__item" key={index}>
+                  <span className="inline-block cursor-pointer px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md  hover:text-[#ff5722] focus:text-[#ff5722] focus:bg-indigo-100 focus:outline-none"
+                  onClick={() => scroller.scrollTo(menu.toLowerCase(), { smooth: true, offset: -100 })}
+                  >
+                    {menu}
+                  </span>
+              </li>
+            ))}
+              <li className="mr-3 nav__item">
+                  <span className="inline-block cursor-pointer px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md  hover:text-[#ff5722] focus:text-[#ff5722] focus:bg-indigo-100 focus:outline-none">
+                  <Link href="/contact-us">
+                            Contact Us
+                          </Link>
+                  </span>
+              </li>
+          </ul>
+        </div>
+
+        <div className="hidden mr-3 space-x-3 lg:flex nav__item">
+          <Link href="/donate">
+            <span className="px-6 py-2 text-white bg-[#ff5722] rounded-md md:ml-5">
+              Make a Contribution
+            </span>
+          </Link>
+        </div>
+      </nav>
+    </div>
+  );
+}
