@@ -4,8 +4,7 @@ import { Disclosure } from "@headlessui/react";
 export default function Navbar({ navigation }) {
   const nav = [
     { name: "About Us", href: "/about-us" },
-    { name: "Vision", href: "/vision" },
-    { name: "Campaigns", href: "/campaigns" },
+    { name: "Donators", href: "/donators" },
     { name: "Resource Center", href: "/resource-center" },
     { name: "Contact Us", href: "/contact-us" },
   ];
@@ -13,7 +12,7 @@ export default function Navbar({ navigation }) {
 
   return (
     <div className="w-full z-50 bg-white sticky top-0">
-      <nav className="container flex flex-wrap items-center justify-between px-8 py-4 mx-auto lg:justify-between xl:px-4">
+      <nav className="container flex  items-center justify-between px-8 py-4 mx-auto lg:justify-between xl:px-4">
         {/* Logo */}
         <Disclosure>
           {({ open }) => (

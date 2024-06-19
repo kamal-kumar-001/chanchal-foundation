@@ -5,8 +5,7 @@ import Navbar from "../home/navbar";
 const MainLayout = ({ children }) => {
   const navigation = [
     { name: "About Us", href: "/about-us" },
-    { name: "Vision", href: "/vision" },
-    { name: "Campaigns", href: "/campaigns" },
+    { name: "Donators", href: "/donators" },
     { name: "Resource Center", href: "/resource-center" },
     { name: "Contact Us", href: "/contact-us" },
   ];

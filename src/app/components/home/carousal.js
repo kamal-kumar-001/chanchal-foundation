@@ -4,12 +4,13 @@ const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const slides = [
-    // "/carousal/07.png",
-    // "/carousal/06.png",
-    // "/carousal/05.png",
-    "https://flowbite.com/docs/images/carousel/carousel-1.svg",
-    "https://flowbite.com/docs/images/carousel/carousel-2.svg",
-    "https://flowbite.com/docs/images/carousel/carousel-3.svg",
+    "/carousal/slider-0.png",
+    "/carousal/slider-1.png",
+    "/carousal/slider-2.png",
+    "/carousal/slider-3.png",
+    // "https://flowbite.com/docs/images/carousel/carousel-1.svg",
+    // "https://flowbite.com/docs/images/carousel/carousel-2.svg",
+    // "https://flowbite.com/docs/images/carousel/carousel-3.svg",
   ];
 
   const slideInterval = useRef();
@@ -58,8 +59,8 @@ const Carousel = () => {
   return (
     <div className=" mx-auto">
       <div className="relative">
-        <div className="overflow-hidden relative  rounded-lg h-[600px]">
-        {/* <div className="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96"> */}
+        {/* <div className="overflow-hidden relative  rounded-lg max-h-[600px]  "> */}
+        <div className="overflow-hidden relative h-[170px] rounded-lg sm:h-[330px] md:h-[400px]  xl:h-[550px] 2xl:h-[600px]">
           {slides.map((slide, index) => (
             <div
               key={index}

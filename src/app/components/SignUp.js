@@ -59,7 +59,7 @@ const Signup = () => {
                                 autoComplete="name"
                                 {...register("name", { required: true })}
                                 className={`appearance-none rounded-none relative block w-full px-3 py-2 border ${errors.name ? "border-red-500" : "border-gray-300"
-                                    } placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
+                                    } placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-[#ff5722] focus:border-[#ff5722] focus:z-10 sm:text-sm`}
                                 placeholder="Full name"
                             />
                             {errors.name && (
@@ -79,7 +79,7 @@ const Signup = () => {
                                 autoComplete="email"
                                 {...register("email", { required: true })}
                                 className={`appearance-none rounded-none relative block w-full px-3 py-2 border ${errors.email ? "border-red-500" : "border-gray-300"
-                                    } placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
+                                    } placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#ff5722] focus:border-[#ff5722] focus:z-10 sm:text-sm`}
                                 placeholder="Email address"
                             />
                             {errors.email && (
@@ -100,7 +100,7 @@ const Signup = () => {
                                     autoComplete="current-password"
                                     {...register("password", { required: true })}
                                     className={`appearance-none rounded-none relative block w-full px-3 py-2 border ${errors.password ? "border-red-500" : "border-gray-300"
-                                        } placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm`}
+                                        } placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-[#ff5722] focus:border-[#ff5722] focus:z-10 sm:text-sm`}
                                     placeholder="Create Password"
                                 />
                                 <div
@@ -127,7 +127,7 @@ const Signup = () => {
                                 id="remember-me"
                                 name="remember-me"
                                 type="checkbox"
-                                className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                                className="h-4 w-4 text-[#ff5722] focus:ring-[#ff5722] border-gray-300 rounded"
                             />
                             <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
                                 Remember me
@@ -135,7 +135,7 @@ const Signup = () => {
                         </div>
 
                         <div className="text-sm">
-                            <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                            <a href="#" className="font-medium text-[#ff5722] hover:text-[#ff5722]">
                                 Forgot your password?
                             </a>
                         </div>
@@ -145,7 +145,7 @@ const Signup = () => {
                         
                         <button
                             type="submit"
-                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none "
+                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#ff5722] hover:bg-[#ff5722] focus:outline-none "
                         >
                             <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                                 {/* <!-- Heroicon name: lock-closed --> */}

@@ -2,37 +2,29 @@ import React from "react";
 
 const footerSections = [
   {
-    title: "Our Solutions",
+    title: "IMPORTANT LINKS",
     links: [
-      { name: "AI Platform", href: "/aiplatform" },
-      { name: "AI Algorithms", href: "/aialgorithms" },
-      { name: "Industry Applications", href: "/industryapplications" },
+      { name: "About Us", href: "/about-us" },
+      { name: "Events", href: "/events" },
+      { name: "Contact Us", href: "/contact-us" },
     ],
   },
   {
-    title: "Use Cases",
-    links: [
-      { name: "Predictive Analysis", href: "/predictiveanalysis" },
-      { name: "Customer Experience", href: "/customerexperience" },
-      { name: "Automation", href: "/automation" },
+    title: "FINANCIAL DETAILS",
+    details: [
+      "CHANCHAL VEER FOUNDATION",
+      "Corporate Identity Number: U85300HR2022NPL106768",
+      "Permanent Account Number (PAN): AAKCC6112A",
+      "Tax Deduction and Collection Account Number (TAN): RTKC07441A",
     ],
   },
   {
-    title: "Resources",
-    links: [
-      { name: "Pricing", href: "/pricing" },
-      { name: "Blog", href: "/blog" },
-      { name: "Case Studies", href: "/casestudies" },
-      { name: "Terms of Service", href: "/terms" },
-      { name: "Privacy Policy", href: "/privacy" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { name: "About Us", href: "/aboutus" },
-      { name: "Careers", href: "/careers" },
-      { name: "Contact Us", href: "/contactus" },
+    title: "ADDRESS",
+    details: [
+      "CHANCHAL VEER FOUNDATION",
+      "Head Office - H. NO. 225/3, UTTAM NAGAR, REWARI, Haryana, India - 123110",
+      "Branch Office - Village - Java, District - Charkhi Dadri, Haryana, India",
+      "+91 9466394803",
     ],
   },
 ];
@@ -43,60 +35,58 @@ const Footer = () => {
       <div className="container mx-auto p-0 md:p-8 xl:px-0">
         <div className="mx-auto max-w-7xl px-6 pb-10 pt-16">
           <div className="">
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 xl:col-span-2 xl:mt-0">
               {footerSections.map((section, index) => (
-                <div key={index} className="md:grid md:grid-cols-2 md:gap-8">
-                  <div>
-                    <h3 className="text-md   font-semibold leading-6 text-white">{section.title}</h3>
+                <div key={index}>
+                  <h3 className="text-md font-semibold leading-6 text-[#ff5722]/80">{section.title}</h3>
+                  {section.links ? (
                     <ul role="list" className="mt-6 space-y-4">
                       {section.links.map((link, linkIndex) => (
                         <li key={linkIndex}>
-                          <a href={link.href} className="text-md leading-6 text-gray-300 hover:text-gray-50">
+                          <a href={link.href} className="text-md leading-6 text-gray-100 hover:text-gray-50">
                             {link.name}
                           </a>
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  ) : (
+                    <ul role="list" className="mt-6 space-y-2">
+                      {section.details.map((detail, detailIndex) => (
+                        <li key={detailIndex} className="text-md leading-6 text-gray-100">
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
+              <div>
+                <h3 className="text-md font-semibold leading-6 text-[#ff5722]/80">FOLLOW US</h3>
+                <div className="flex mt-6 space-x-5 text-gray-100">
+                  <a href="https://twitter.com/" target="_blank" rel="noopener">
+                    <span className="sr-only">Twitter</span>
+                    <Twitter />
+                  </a>
+                  <a href="https://facebook.com/" target="_blank" rel="noopener">
+                    <span className="sr-only">Facebook</span>
+                    <Facebook />
+                  </a>
+                  <a href="https://instagram.com/" target="_blank" rel="noopener">
+                    <span className="sr-only">Instagram</span>
+                    <Instagram />
+                  </a>
+                  <a href="https://linkedin.com/" target="_blank" rel="noopener">
+                    <span className="sr-only">Linkedin</span>
+                    <Linkedin />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
           <div className="mt-16 border-t border-gray-400/30 pt-8 sm:mt-20 lg:mt-24">
             <div className="text-md text-center text-white">
               Copyright © {new Date().getFullYear()}. Crafted with
-              <span className="text-gray-50">♥</span> by  at
-              <a rel="noopener" href="/" className="text-gray-50 hover:text-gray-300"> AIOps.</a>
-          <div className="">
-            <div>Follow us</div>
-            <div className="flex mt-5 space-x-5 text-gray-400 ">
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener">
-                <span className="sr-only">Twitter</span>
-                <Twitter />
-              </a>
-              <a
-                href="https://facebook.com/"
-                target="_blank"
-                rel="noopener">
-                <span className="sr-only">Facebook</span>
-                <Facebook />
-              </a>
-              <a
-                href="https://instagram.com/"
-                target="_blank"
-                rel="noopener">
-                <span className="sr-only">Instagram</span>
-                <Instagram />
-              </a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener">
-                <span className="sr-only">Linkedin</span>
-                <Linkedin />
-              </a>
-            </div>
-          </div>
+              <span className="text-gray-50"> ♥ </span> by Chanchal Veer Foundations
             </div>
           </div>
         </div>

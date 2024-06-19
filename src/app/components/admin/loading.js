@@ -1,5 +1,5 @@
 import React from "react";
-import MainLayout from "../pages/MainLayout";
+import MainLayout from "./Mainlayout";
 
 const Loading = () => {
   return (

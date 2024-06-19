@@ -6,6 +6,7 @@ import Carousel from "../home/carousal";
 import ImpactSection from "../home/impact";
 import Missions from "../home/mission";
 import MainLayout from "./MainLayout";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,9 +22,9 @@ export default function Home() {
           Smile Foundation works as a catalyst in the cycle of change, complementing and supplementing government efforts (view details) to achieve the Sustainable Development Goals. We sensitize and partner with like-minded institutions and individuals to implement high-impact programmes that enable access, enhance quality and help bring long term behavioural change at the grassroots.
           <br />
           
-          <button className="text-[#ff5722] ">
+          <Link href='/about-us' className="text-[#ff5722] ">
             read more &gt;
-          </button>
+          </Link>
         </SectionTitle>
       </Element>
       <Element name="impact">

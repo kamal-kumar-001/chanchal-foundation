@@ -37,12 +37,12 @@ export default function Donate() {
           <h3 className="text-4xl font-bold">Thank you for your support!</h3>
           <p className="mt-4 text-lg">Your contribution helps us ensure education for all.</p>
           <Link href={`/receipt/${result?._id}`}>
-          <button className='w-48 my-8 py-4 font-semibold text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7'>
+          <button className='w-48 my-8 mx-3 py-4 font-semibold text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7'>
           Get Your Recipt
           </button>
           </Link>
           <Link href={`/`}>
-          <button className='w-48 my-8 py-4 font-semibold text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7'>
+          <button className='w-48 my-8 mx-3 py-4 font-semibold text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7'>
           Explore More
           </button>
           </Link>
@@ -65,12 +65,6 @@ export default function Donate() {
           </p>
           <p className="max-w-sm mt-4 mb-4">
             The pandemic affected every child, but some suffered more than others. Children from socio-economically weaker sections, tribal belts, remote rural areas, and urban slums became the worst sufferers. When the schools were shut, only about 28% of children living in rural areas and slums had access to digital learning. Education came to a halt for lakhs of children, who had already been struggling in the pre-pandemic world.
-          </p>
-          <p className="max-w-sm mt-4 mb-4">
-            Smile Foundation, through its ‘Shiksha Na Ruke’ initiative, has been helping children from difficult circumstances get back to school and restart their lives positively and with hope. At present, we are directly providing education to over 100,000 children in 23 states of India.
-          </p>
-          <p className="max-w-sm mt-4 mb-4">
-            Despite all the odds, these young champions have not given up and continue to dream and work hard. With your support, we can fuel their dreams with accessible and quality education. Join hands with us to ensure a happy and safe childhood for all!
           </p>
         </div>
         <div>
@@ -129,7 +123,7 @@ export default function Donate() {
               {errors.amount && <span className="text-red-500">{errors.amount.message}</span>}
             </div>
             <button type="submit" className="w-full py-4 font-semibold text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7">
-              Send Message
+              Donate
             </button>
           </form>
         </div>
