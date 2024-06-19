@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import MainLayout from '@/app/components/pages/MainLayout';
-import Loading from '@/app/components/admin/loading';
 
 export default function Index({params}) {
   const slug = params.slug;
@@ -52,8 +51,16 @@ export default function Index({params}) {
     doc.save(`receipt_${donationDetails._id}.pdf`);
   };
 
-  if (!donationDetails) return <Loading />;
-//   console.log(donationDetails);
+  if (!donationDetails) return (
+    <MainLayout>
+    <div className="min-h-screen flex items-center justify-center ">
+      <div className="animate-pulse">
+        {" "}
+        <div className="w-20 h-20 bg-[#ff5722]/80 rounded-full"></div>
+      </div>
+    </div>
+    </MainLayout>
+);
 
   return (
     <MainLayout>

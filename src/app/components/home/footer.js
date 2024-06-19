@@ -5,7 +5,7 @@ const footerSections = [
     title: "IMPORTANT LINKS",
     links: [
       { name: "About Us", href: "/about-us" },
-      { name: "Events", href: "/events" },
+      { name: "Receipts", href: "/receipt" },
       { name: "Contact Us", href: "/contact-us" },
     ],
   },

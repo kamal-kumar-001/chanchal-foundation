@@ -88,7 +88,7 @@ const Carousel = () => {
           className="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
           onClick={goToPreviousSlide}
         >
-          <span className="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30  group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white  group-focus:outline-none">
+          <span className="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-500  group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white  group-focus:outline-none">
             <svg
               className="w-5 h-5 text-white sm:w-6 sm:h-6 "
               fill="none"
@@ -106,7 +106,7 @@ const Carousel = () => {
           className="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
           onClick={goToNextSlide}
         >
-          <span className="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30  group-hover:bg-white/50  group-focus:ring-4 group-focus:ring-white  group-focus:outline-none">
+          <span className="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-500  group-hover:bg-white/50  group-focus:ring-4 group-focus:ring-white  group-focus:outline-none">
             <svg
               className="w-5 h-5 text-white sm:w-6 sm:h-6 "
               fill="none"
