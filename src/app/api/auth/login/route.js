@@ -1,5 +1,5 @@
-import connectDB from '../../../../middleware/mongoose';
-import Member from '../../../../Models/Member';
+import connectDB from '../../../../../middleware/mongoose';
+import Member from '../../../../../Models/Member';
 import jwt from 'jsonwebtoken';
 
 export async function POST(req) {
@@ -31,13 +31,13 @@ export async function POST(req) {
 
     // Create a JWT token
     const token = jwt.sign(
-      { id: member._id, email: member.email, isAdmin: member.isAdmin },
+      { id: member._id,name: member.name, email: member.email, isAdmin: member.isAdmin },
       "your_jwt_secret_key",
     //   process.env.JWT_SECRET,
-      { expiresIn: '24h' }
+      // { expiresIn: '24h' }
     );
 
-    return new Response(JSON.stringify({ token }), {
+    return new Response(JSON.stringify({ token, isAdmin: member.isAdmin }), {
       status: 200,
       headers: {
         'Content-Type': 'application/json'

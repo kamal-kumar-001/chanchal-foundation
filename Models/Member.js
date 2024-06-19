@@ -7,6 +7,11 @@ const MemberSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
+  phone: {
+    type: Number,
+    required: false,
+    trim: true
+  },
   email: {
     type: String,
     required: true,

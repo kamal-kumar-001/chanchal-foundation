@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import AdminPage from "../components/admin/AdminPage";
 import Loading from "../components/admin/loading";
+import DashboardLayout from '../components/pages/Dashboard';
 
 export default function Index() {
     const router = useRouter();
     const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useEffect(() => {
@@ -30,8 +31,11 @@ export default function Index() {
                 
                 if (response.ok) {
                     const result = await response.json();
-                    if (result.isAdmin) {
+                    // console.log(result);
+                    if (result.isAuthenticated) {
                         setIsAuthenticated(true);
+                        setUser(result.user)
+
                     } else {
                         router.push('/login');
                     }
@@ -48,14 +52,13 @@ export default function Index() {
 
         checkAuth();
     }, [router]);
-
     if (loading) {
         return <Loading />;
     }
 
     return (
         <>
-            {isAuthenticated ? <AdminPage /> : <Loading />}
+            {isAuthenticated ? <DashboardLayout user={user} /> : <Loading />}
         </>
     );
 }

@@ -1,6 +1,6 @@
 "use client";
 import Head from "next/head";
-import Home from "./components/home/Home";
+import Home from "./components/pages/Home";
 
 
 export default function Index() {

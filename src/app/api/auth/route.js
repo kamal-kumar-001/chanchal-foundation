@@ -33,7 +33,8 @@ export async function POST(req, res) {
               });
             // return res.status(401).json({ isAuthenticated: false, message: 'Invalid token' });
         }
-        return new Response(JSON.stringify({ isAuthenticated: true, user: decoded }), {
+      const isAdmin = decoded.isAdmin;
+        return new Response(JSON.stringify({ isAuthenticated: true, user: decoded, isAdmin }), {
             status: 200,
             headers: {
               'Content-Type': 'application/json'

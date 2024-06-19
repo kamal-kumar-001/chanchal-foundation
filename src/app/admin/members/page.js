@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import AdminPage from "../components/admin/AdminPage";
-import Loading from "../components/admin/loading";
+import Loading from "../../components/admin/loading";
+import MemberPage from '../../components/admin/MemberPage';
 
 export default function Index() {
     const router = useRouter();
@@ -30,7 +30,7 @@ export default function Index() {
                 
                 if (response.ok) {
                     const result = await response.json();
-                    if (result.isAdmin) {
+                    if (result.isAuthenticated) {
                         setIsAuthenticated(true);
                     } else {
                         router.push('/login');
@@ -55,7 +55,7 @@ export default function Index() {
 
     return (
         <>
-            {isAuthenticated ? <AdminPage /> : <Loading />}
+            {isAuthenticated ? <MemberPage /> : <Loading />}
         </>
     );
 }

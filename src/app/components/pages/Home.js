@@ -1,32 +1,15 @@
-import Navbar from "./navbar";
-import SectionTitle from "./sectionTitle";
+import SectionTitle from "../home/sectionTitle";
 import { Element } from "react-scroll";
-
-// import { benefitOne, benefitTwo } from "./data";
-// import Benefits from "./benefits";
-import Footer from "./footer";
-import Cta from "./cta";
-import Faq from "./faq";
-import Carousel from "./carousal";
-import ImpactSection from "./impact";
-import Missions from "./mission";
-
-//import dynamic from "next/dynamic";
-
-// const Video = dynamic(() => import("../components/video"));
-
-// const Benefits = dynamic(() => import("../components/benefits"));
-// const Footer = dynamic(() => import("../components/footer"));
-// const Testimonials = dynamic(() => import("../components/testimonials"));
-// const Cta = dynamic(() => import("../components/cta"));
-// const Faq = dynamic(() => import("../components/faq"));
-
-// const PopupWidget = dynamic(() => import("../components/popupWidget"));
+import Cta from "../home/cta";
+import Faq from "../home/faq";
+import Carousel from "../home/carousal";
+import ImpactSection from "../home/impact";
+import Missions from "../home/mission";
+import MainLayout from "./MainLayout";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
+    <MainLayout>
       <Carousel />
       <Element name="product">
         <SectionTitle
@@ -55,7 +38,6 @@ export default function Home() {
       </SectionTitle>
       <Faq />
       <Cta />
-      <Footer />
-    </>
+    </MainLayout>
   );
 }

@@ -5,8 +5,8 @@ import Contact from '../../../../Models/Contact';
 export async function GET(req) {
   await connectDB();
   try {
-    const contacts = await Contact.find({});
-    return new Response(JSON.stringify(contacts), {
+    const contacts = await Contact.find({}).sort({ createdAt: -1 });
+    return new Response(JSON.stringify({contacts, success: true}), {
       status: 200,
       headers: {
         'Content-Type': 'application/json'
@@ -26,6 +26,7 @@ export async function GET(req) {
 export async function POST(req) {
   await connectDB();
   try {
+    
     const data = await req.json();
     const newContact = new Contact(data);
     await newContact.save();

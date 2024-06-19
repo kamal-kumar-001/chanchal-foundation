@@ -5,8 +5,8 @@ import Member from '../../../../Models/Member';
 export async function GET(req) {
   await connectDB();
   try {
-    const members = await Member.find({});
-    return new Response(JSON.stringify(members), {
+    const members = await Member.find({}).sort({ createdAt: -1 });
+    return new Response(JSON.stringify({members, success: true}), {
       status: 200,
       headers: {
         'Content-Type': 'application/json'

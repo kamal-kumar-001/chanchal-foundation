@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const { Schema } = require("mongoose");
 const DonatorSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -19,6 +19,10 @@ const DonatorSchema = new mongoose.Schema({
   paymentStatus: {
     type: Boolean,
     default: false,
+  },
+  member: { 
+    type: Schema.Types.ObjectId, 
+    ref: "Member" 
   },
 }, {timestamps: true});
 mongoose.models = {};

@@ -14,7 +14,7 @@ const LogIn = () => {
 
     const onSubmit = async (data) => {
         try {
-            const response = await fetch('/api/login', {
+            const response = await fetch('/api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -24,11 +24,15 @@ const LogIn = () => {
 
             if (response.ok) {
                 const result = await response.json();
-                // Save the token in local storage or a cookie
                 localStorage.setItem('token', result.token);
-                // Redirect to the admin page on successful login
-                router.push('/admin');
-            } else {
+                localStorage.setItem('isAdmin', result.isAdmin); // Save isAdmin status
+          
+                if (result.isAdmin) {
+                  router.push('/admin'); // Redirect to admin page if the user is an admin
+                } else {
+                  router.push('/dashboard'); // Redirect to a regular user dashboard or homepage
+                }
+              } else {
                 const errorData = await response.json();
                 console.error('Login failed:', errorData.message);
             }
@@ -141,26 +145,7 @@ const LogIn = () => {
                 </form>
 
                 <div className="mt-6">
-                    <div className="relative">
-                        <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                            <div className="w-full border-t border-gray-300" />
-                        </div>
-                        <div className="relative flex justify-center text-sm">
-                            <span className="px-2 bg-gray-50 text-gray-500">
-                                Or continue with
-                            </span>
-                        </div>
-                    </div>
 
-                    <div className="mt-6 grid grid-cols-1 gap-3">
-                        <div>
-                        <button
-                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none "
-                        >
-                           Google
-                        </button>
-                        </div>
-                    </div>
                     <p className="mt-2 mb-0 pt-1 text-sm font-semibold">
               Do not have an account?
               <Link

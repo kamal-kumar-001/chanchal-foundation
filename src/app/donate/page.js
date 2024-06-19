@@ -1,6 +1,6 @@
 "use client";
 import Head from "next/head";
-import Donate from "../components/home/donate";
+import Donate from "../components/pages/donate";
 
 
 export default function Index() {

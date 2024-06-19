@@ -3,7 +3,8 @@ import mongoose from 'mongoose'
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/Chanchal");
+    await mongoose.connect("mongodb://kamal:%40mongod8@ac-bhaee3p-shard-00-00.qhpam01.mongodb.net:27017,ac-bhaee3p-shard-00-01.qhpam01.mongodb.net:27017,ac-bhaee3p-shard-00-02.qhpam01.mongodb.net:27017/Chanchal?replicaSet=atlas-q931k6-shard-0&ssl=true&authSource=admin");
+    // await mongoose.connect("mongodb://localhost:27017/Chanchal");
     // console.log("Database is connected...");
   } catch (error) {
         console.log(`Error: ${error.message}`);
@@ -13,21 +14,3 @@ const connectDB = async () => {
     
     module.exports = connectDB;
     
-//     import mongoose from 'mongoose';
-    
-//     const connectDB = handler => async (req, res) => {
-//         if (mongoose.connections[0].readyState) {
-//             // Use current db connection
-//                 console.log("Database is connected...");
-//                 return handler(req, res);
-//             }
-//             // Use new db connection
-//             await mongoose.connect("mongodb://localhost:27017/Chanchal", {
-//                 useUnifiedTopology: true,
-//                 useNewUrlParser: true,
-//             });
-//             console.log("Database is connected...");
-//   return handler(req, res);
-// };
-
-// export default connectDB;

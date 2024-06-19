@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Loading from "../../components/admin/loading";
-import ContactPage from '../../components/admin/ContactPage';
+import DonatorPage from '../../components/admin/DonatorPage';
 
 export default function Index() {
     const router = useRouter();
@@ -55,7 +55,7 @@ export default function Index() {
 
     return (
         <>
-            {isAuthenticated ? <ContactPage /> : <Loading />}
+            {isAuthenticated ? <DonatorPage /> : <Loading />}
         </>
     );
 }
