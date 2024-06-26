@@ -7,6 +7,9 @@ const ContactSchema = new mongoose.Schema({
   },
   email: {
     type: String,
+  },
+  phone: {
+    type: Number,
     required: true,
   },
   message: {

@@ -2,7 +2,7 @@ import React from 'react'
 
 function SubHeading({ title }) {
     return (
-        <div className=' w-screen py-9 !text-center text-orange-400'>
+        <div className=' mx-auto py-9 !text-center text-orange-400'>
             <p className='text-2xl font-normal pb-6'>
                 {title}
             </p>
