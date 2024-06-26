@@ -107,50 +107,45 @@ export default function ContactUs() {
             <div className="card h-fit max-w-6xl p-5 md:p-12" id="form">
               <h2 className="mb-4 text-2xl font-bold">Feel Free To Contact Us</h2>
               <form id="contactForm" onSubmit={handleSubmit(onSubmit)}>
-                <div className="mb-6">
-                  <div className="mx-0 mb-1 sm:mb-4">
-                    <div className="mx-0 mb-1 sm:mb-4">
-                      <label htmlFor="name" className="pb-1 text-xs uppercase tracking-wider">Name</label>
-                      <input
-                        type="text"
-                        id="name"
-                        {...register("name", { required: "Name is required" })}
-                        placeholder="Your name"
-                        className={`mb-2 w-full rounded-md border py-2 pl-2 pr-4 shadow-md sm:mb-0 ${errors.name ? 'border-red-500' : 'border-gray-400'}`}
-                      />
-                      {errors.name && <span className="text-red-500">{errors.name.message}</span>}
-                    </div>
-                    <div className="mx-0 mb-1 sm:mb-4">
-                      <label htmlFor="email" className="pb-1 text-xs uppercase tracking-wider">Email</label>
-                      <input
-                        type="email"
-                        id="email"
-                        {...register("email", { required: "Email is required", pattern: { value: /^\S+@\S+$/i, message: "Invalid email address" } })}
-                        placeholder="Your email address"
-                        className={`mb-2 w-full rounded-md border py-2 pl-2 pr-4 shadow-md sm:mb-0 ${errors.email ? 'border-red-500' : 'border-gray-400'}`}
-                      />
-                      {errors.email && <span className="text-red-500">{errors.email.message}</span>}
-                    </div>
-                  </div>
-                  <div className="mx-0 mb-1 sm:mb-4">
-                    <label htmlFor="message" className="pb-1 text-xs uppercase tracking-wider">Message</label>
-                    <textarea
-                      id="message"
-                      {...register("message", { required: "Message is required" })}
-                      cols="30"
-                      rows="5"
-                      placeholder="Write your message..."
-                      className={`mb-2 w-full rounded-md border py-2 pl-2 pr-4 shadow-md sm:mb-0 ${errors.message ? 'border-red-500' : 'border-gray-400'}`}
-                    ></textarea>
-                    {errors.message && <span className="text-red-500">{errors.message.message}</span>}
-                  </div>
-                </div>
-                <div className="text-center">
-                  <button type="submit" className="w-full bg-[#ff5722] text-white px-6 py-3 font-xl rounded-md sm:mb-0">
-                    Send Message
-                  </button>
-                </div>
-              </form>
+  <div className="mb-5 mt-5">
+    <input
+      type="text"
+      id="name"
+      {...register("name", { required: "Name is required" })}
+      placeholder="Your Name"
+      className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100 ${errors.name ? 'border-red-500' : ''}`}
+    />
+    {errors.name && <span className="text-red-500">{errors.name.message}</span>}
+  </div>
+
+  <div className="mb-5">
+    <input
+      type="email"
+      id="email"
+      {...register("email", { required: "Email is required", pattern: { value: /^\S+@\S+$/i, message: "Invalid email address" } })}
+      placeholder="Your Email Address"
+      className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100 ${errors.email ? 'border-red-500' : ''}`}
+    />
+    {errors.email && <span className="text-red-500">{errors.email.message}</span>}
+  </div>
+
+  <div className="mb-5">
+    <textarea
+      id="message"
+      {...register("message", { required: "Message is required" })}
+      cols="30"
+      rows="5"
+      placeholder="Write your message..."
+      className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100 ${errors.message ? 'border-red-500' : ''}`}
+    ></textarea>
+    {errors.message && <span className="text-red-500">{errors.message.message}</span>}
+  </div>
+
+  <button type="submit" className="w-full py-4 font-semibold text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7">
+    Send Message
+  </button>
+</form>
+
             </div>
           </div>
         </div>

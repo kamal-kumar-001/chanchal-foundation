@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { Schema } = require("mongoose");
+
 const DonatorSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -16,14 +16,28 @@ const DonatorSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  address: {
+    type: String,
+    required: true
+  },
+  pincode: {
+    type: String,
+    required: true
+  },
+  pancard: {
+    type: String,
+  },
+  remarks: {
+    type: String,
+  },
+  message: {
+    type: String,
+  },
   paymentStatus: {
     type: Boolean,
     default: false,
   },
-  member: { 
-    type: Schema.Types.ObjectId, 
-    ref: "Member" 
-  },
 }, {timestamps: true});
+
 mongoose.models = {};
 export default mongoose.model('Donator', DonatorSchema);

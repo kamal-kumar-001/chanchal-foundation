@@ -16,7 +16,7 @@ const ImpactSection = () => {
                 <div className=" mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
                     <div className="rounded-md   p-8 text-center shadow">
                         <div className="text-[#ff5722] opacity-80  text-7xl font-bold mx-auto flex  items-center justify-center rounded-md ">
-                            <CountUp end={1000} />+
+                            <CountUp suffix="+" duration={5} end={1000} />
                         </div>
                         <h3 className="mt-6 text-4xl font-semibold opacity-80 text-[#ff5722]">Lac</h3>
                         <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-700">
@@ -25,7 +25,7 @@ const ImpactSection = () => {
                     </div>
                     <div className="rounded-md   p-8 text-center shadow">
                         <div className="text-[#ff5722] opacity-80  text-7xl font-bold mx-auto flex  items-center justify-center rounded-md ">
-                            <CountUp end={100} />+
+                            <CountUp suffix="+" duration={5} end={100} />
                         </div>
                         <h3 className="mt-6 text-4xl font-semibold opacity-80 text-[#ff5722]">Villagess</h3>
                         <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-700">
@@ -35,7 +35,7 @@ const ImpactSection = () => {
 
                     <div className="rounded-md   p-8 text-center shadow">
                         <div className="text-[#ff5722] opacity-80  text-7xl font-bold mx-auto flex  items-center justify-center rounded-md ">
-                            <CountUp end={300} />+
+                            <CountUp suffix="+" duration={5} end={300} />
                         </div>
                         <h3 className="mt-6 text-4xl font-semibold opacity-80 text-[#ff5722]">Projects</h3>
                         <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-700">

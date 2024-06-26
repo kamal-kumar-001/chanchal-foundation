@@ -15,7 +15,7 @@ export default function Home() {
       <Element name="product">
         <SectionTitle
           pretitle=""
-          title="">
+          title="Chanchal Veer Foundation">
           Established in 2002, Smile Foundation is an Indian development organization impacting the lives of over 15 lakh children and their families every year. We have more than 400 projects on education, healthcare, livelihood, and women empowerment in over 2,000 remote villages and urban slums across 25 states of India.
           <br />
           <br />
