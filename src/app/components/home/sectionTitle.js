@@ -11,11 +11,13 @@ export default function SectionTitle(props) {
           {props.pretitle}
         </div>
       )}
-
       {props.title && (
-        <h2 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl ">
+        <div className=' mx-auto py-9 !text-center text-orange-400'>
+        <p className='text-3xl font-normal pb-6'>
           {props.title}
-        </h2>
+        </p>
+        <hr className='mx-auto max-w-20 border-b-2 border-blue-500' />
+    </div>
       )}
 
       {props.children && (

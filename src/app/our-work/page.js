@@ -1,7 +1,7 @@
 "use client";
 import Head from "next/head";
-import DonatorList from "../components/pages/DonatorList";
 import MainLayout from "../components/pages/MainLayout";
+import WorkGallery from "../components/workGallery";
 
 
 export default function Index() {
@@ -36,7 +36,7 @@ export default function Index() {
         <meta property="twitter:image" content="https://chanchalveer.org/og.png" />
       </Head>
       <MainLayout>
-      <DonatorList />
+      <WorkGallery />
     </MainLayout>
     </>
   );

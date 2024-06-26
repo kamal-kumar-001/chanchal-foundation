@@ -4,10 +4,15 @@ import Navbar from "../home/navbar";
 
 const MainLayout = ({ children }) => {
   const navigation = [
-    { name: "About Us", href: "/about-us" },
-    { name: "Donators", href: "/donators" },
-    { name: "Resource Center", href: "/resource-center" },
-    { name: "Contact Us", href: "/contact-us" },
+    {
+      name: 'About Us', href: '/about-us', subNav: [
+        { name: 'About Us', href: '/about-us' },
+        { name: 'Our Work', href: '/our-work' },
+      ]
+    },
+    { name: 'Our Work', href: '/our-work', subNav: [] },
+    { name: 'Resource Center', href: '/resource-center', subNav: [] },
+    { name: 'Contact Us', href: '/contact-us', subNav: [] },
   ];
   return (
     <>
