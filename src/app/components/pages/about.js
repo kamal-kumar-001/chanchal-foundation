@@ -48,13 +48,13 @@ const AboutPage = () => {
           Established in memory of Chanchal Yadav by the Vijay Veer Sunaria, Chanchal Veer Foundation is a dedicated organization impacting numerous lives through various social service initiatives. We organize medical and blood donation camps, providing free health checkups and medicines to the underprivileged.
           <br />
           <br />
-          Recently, a free health checkup and blood donation camp was organized at the site of Chanchal Yadav's statue in village Java. During the camp, 350 patients were examined and provided with medicines, and 49 units of blood were collected. This event was supported by Dr. Sanjeev Kumar Arora and Jogendra Singh Memorial Blood Bank, with significant assistance from the Rewari team.
+          Recently, a free health checkup and blood donation camp was organized at the site of Chanchal Yadav&apos;s statue in village Java. During the camp, 350 patients were examined and provided with medicines, and 49 units of blood were collected. This event was supported by Dr. Sanjeev Kumar Arora and Jogendra Singh Memorial Blood Bank, with significant assistance from the Rewari team.
           <br />
           <br />
-          Vijay Veer Sunaria highlighted that the Foundation, registered with the Ministry of Corporate Affairs, also provides free blood to girls up to one year old in Rewari, aiming to improve medical conditions in society. Haryanvi actor Kuldeep Kaushik (KD), serving as the brand ambassador, was present at the camp, which was attended by many who appreciated the Foundation's efforts.
+          Vijay Veer Sunaria highlighted that the Foundation, registered with the Ministry of Corporate Affairs, also provides free blood to girls up to one year old in Rewari, aiming to improve medical conditions in society. Haryanvi actor Kuldeep Kaushik (KD), serving as the brand ambassador, was present at the camp, which was attended by many who appreciated the Foundation&apos;s efforts.
           <br />
           <br />
-          Vijay Veer Sunaria urged the community to join the Foundation for enhanced social service efforts. The elders and youth who participated assured their support for the Foundation's mission, showcasing the collective spirit of the community.
+          Vijay Veer Sunaria urged the community to join the Foundation for enhanced social service efforts. The elders and youth who participated assured their support for the Foundation&apos;s mission, showcasing the collective spirit of the community.
           <br />
         </p>
       </div>
