@@ -4,8 +4,7 @@ import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
 import { useRouter } from 'next/navigation'
-import Navbar from './home/navbar';
-import Footer from './home/footer';
+import MainLayout from './pages/MainLayout';
 
 const LogIn = () => {
     const router = useRouter();
@@ -46,8 +45,7 @@ const LogIn = () => {
     };
 
     return (
-        <>
-        <Navbar/>
+        <MainLayout>
         <div className="min-h-screen flex items-center justify-center bg-gray-50  py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-md w-full space-y-8">
             <div className='flex justify-center'>
@@ -164,7 +162,6 @@ const LogIn = () => {
                 </div>
             </div>
         </div>
-        <Footer />
-        </>
+        </MainLayout>
     )}
     export default LogIn

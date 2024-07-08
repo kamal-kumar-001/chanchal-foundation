@@ -3,11 +3,16 @@ import { useState } from "react";
 
 export default function Navbar({ navigation }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+
+  // const token = localStorage.getItem('token');
+  // if (token) {
+  //   setIsLogin(true)
+  // }
 
   const nav = [
     { name: "About Us", href: "/about-us" },
     { name: "Donators", href: "/donators" },
-    { name: "Resource Center", href: "/resource-center" },
     { name: "Contact Us", href: "/contact-us" },
   ];
   if (!navigation) navigation = nav;
@@ -72,11 +77,15 @@ export default function Navbar({ navigation }) {
                 Make a Contribution
               </button>
             </Link>
-            <Link href="/signup">
+            {isLogin ? (<Link href="/dashboard">
+            <span className="px-6 py-2 text-white bg-[#ff5722] rounded-md md:ml-5">
+              Dashboard
+            </span>
+          </Link>) :(<Link href="/signup">
             <span className="px-6 py-2 text-white bg-[#ff5722] rounded-md md:ml-5">
               Became a Volunteer 
             </span>
-          </Link>
+          </Link>)}
           </div>
         </div>
 
@@ -101,11 +110,15 @@ export default function Navbar({ navigation }) {
               Contribute
             </span>
           </Link>
-          <Link href="/signup">
+          {isLogin ? (<Link href="/dashboard">
             <span className="px-6 py-2 text-white bg-[#ff5722] rounded-md md:ml-5">
-              Volunteer
+              Dashboard
             </span>
-          </Link>
+          </Link>) :(<Link href="/signup">
+            <span className="px-6 py-2 text-white bg-[#ff5722] rounded-md md:ml-5">
+              Volunteer 
+            </span>
+          </Link>)}
         </div>
       </nav>
 

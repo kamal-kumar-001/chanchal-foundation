@@ -29,10 +29,10 @@ export default function Home() {
         </SectionTitle>
         <ImpactSection />
         <Missions />
-      <SectionTitle title="Our Work">
+      <SectionTitle title="OUR WORK">
       </SectionTitle>
       <Work />
-      <SectionTitle title="Our Team">
+      <SectionTitle title="TEAM">
       </SectionTitle>
       <ResourcePage />
       <SectionTitle title="Frequently Asked Questions">
