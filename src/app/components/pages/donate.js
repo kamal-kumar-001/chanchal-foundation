@@ -6,10 +6,12 @@ import MainLayout from "./MainLayout";
 import DonatorList from "./DonatorList";
 import Heading from "../heading";
 import SubHeading from "../subHeading";
+
 export default function Donate() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [submitted, setSubmitted] = useState(false);
   const [result, setResult] = useState({});
+  const [needTaxCertificate, setNeedTaxCertificate] = useState(false);
 
   const onSubmit = async (data) => {
     try {
@@ -35,24 +37,27 @@ export default function Donate() {
 
   if (submitted) {
     return (
-      <div className="bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 text-center">
-          <h3 className="text-4xl font-bold">Thank you for your support!</h3>
-          <p className="mt-4 text-lg">Your contribution helps us ensure education for all.</p>
-          <Link href={`/receipt/${result?._id}`}>
-            <button className='w-48 my-8 mx-3 py-4 font-semibold text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7'>
-              Get Your Recipt
-            </button>
-          </Link>
-          <Link href={`/`}>
-            <button className='w-48 my-8 mx-3 py-4 font-semibold text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7'>
-              Explore More
-            </button>
-          </Link>
+      <MainLayout>
+        <div className="bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 text-center">
+            <h3 className="text-4xl font-bold">Thank you for your support!</h3>
+            <p className="mt-4 text-lg">Your contribution helps us ensure education for all.</p>
+            <Link href={`/receipt/${result?._id}`}>
+              <button className='w-48 my-8 mx-3 py-4 font-semibold text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7'>
+                Get Your Receipt
+              </button>
+            </Link>
+            <Link href={`/`}>
+              <button className='w-48 my-8 mx-3 py-4 font-semibold text-white transition-colors bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7'>
+                Explore More
+              </button>
+            </Link>
+          </div>
         </div>
-      </div>
+      </MainLayout>
     );
   }
+
   return (
     <MainLayout>
       <div className="bg-gray-50">
@@ -118,44 +123,61 @@ export default function Donate() {
                 {errors.email && <span className="text-red-500">{errors.email.message}</span>}
               </div>
 
-              <div className="mb-5">
-                <input
-                  type="text"
-                  placeholder="Full Address*"
-                  autoComplete="false"
-                  className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100 ${errors.address ? 'border-red-500' : ''}`}
-                  {...register('address', { required: 'Full address is required' })}
-                />
-                {errors.address && <span className="text-red-500">{errors.address.message}</span>}
+              <div className="mb-5 flex items-center">
+              <label htmlFor="taxCertificate" className="inline-flex items-center me-5 cursor-pointer">
+                  <input type="checkbox" className="mr-2 sr-only peer"
+                  id="taxCertificate"
+                  checked={needTaxCertificate}
+                  onChange={() => setNeedTaxCertificate(!needTaxCertificate)}
+                  />
+                  <div class=" relative w-11 h-6 bg-gray-200 rounded-full peer  peer-focus:ring-1 peer-focus:ring-orange-300 dark:peer-focus:ring-orange-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-orange-500"></div>
+                </label>
+                <span htmlFor="taxCertificate" className="text-gray-800">Require 80G Tax Exp. Certificate*</span>
               </div>
 
-              <div className="mb-5">
-                <input
-                  type="text"
-                  placeholder="Pincode*"
-                  autoComplete="false"
-                  className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100 ${errors.pincode ? 'border-red-500' : ''}`}
-                  {...register('pincode', {
-                    required: 'Pincode is required',
-                    pattern: {
-                      value: /^[0-9]{6}$/,
-                      message: 'Invalid pincode'
-                    }
-                  })}
-                />
-                {errors.pincode && <span className="text-red-500">{errors.pincode.message}</span>}
-              </div>
+              {needTaxCertificate && (
+                <>
+                  <div className="mb-5">
+                    <input
+                      type="text"
+                      placeholder="Pancard*"
+                      autoComplete="false"
+                      className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100 ${errors.pancard ? 'border-red-500' : ''}`}
+                      {...register('pancard', { required: 'Pancard is required' })}
+                    />
+                    {errors.pancard && <span className="text-red-500">{errors.pancard.message}</span>}
+                  </div>
+                  <div className="mb-5">
+                    <input
+                      type="text"
+                      placeholder="Full Address*"
+                      autoComplete="false"
+                      className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100 ${errors.address ? 'border-red-500' : ''}`}
+                      {...register('address', { required: 'Full address is required' })}
+                    />
+                    {errors.address && <span className="text-red-500">{errors.address.message}</span>}
+                  </div>
 
-              <div className="mb-5">
-                <input
-                  type="text"
-                  placeholder="Pancard*"
-                  autoComplete="false"
-                  className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100 ${errors.pancard ? 'border-red-500' : ''}`}
-                  {...register('pancard')}
-                />
-                {errors.pancard && <span className="text-red-500">{errors.pancard.message}</span>}
-              </div>
+                  <div className="mb-5">
+                    <input
+                      type="text"
+                      placeholder="Pincode*"
+                      autoComplete="false"
+                      className={`w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100 ${errors.pincode ? 'border-red-500' : ''}`}
+                      {...register('pincode', {
+                        required: 'Pincode is required',
+                        pattern: {
+                          value: /^[0-9]{6}$/,
+                          message: 'Invalid pincode'
+                        }
+                      })}
+                    />
+                    {errors.pincode && <span className="text-red-500">{errors.pincode.message}</span>}
+                  </div>
+
+
+                </>
+              )}
 
               <div className="mb-5">
                 <textarea
@@ -183,7 +205,7 @@ export default function Donate() {
             </form>
           </div>
         </div>
-        <SubHeading title={'Chanchal Veer Foundation Supportors'} />
+        <SubHeading title={'Chanchal Veer Foundation Supporters'} />
         <DonatorList />
       </div>
     </MainLayout>

@@ -59,7 +59,7 @@ export default function ContactUs() {
         <Heading title={'We Would Love to Hear from You'} subtitle={'Please write or call us with your questions or comments'} />
         <div className="mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div className="my-4">
-            <SubHeading title={'Support Us'} />
+            <SubHeading title={'Contact US'} />
           </div>
           <div className="!text-center mx-auto space-y-3 ">
             <p className="text-xl ">
@@ -147,9 +147,9 @@ export default function ContactUs() {
                   Send Message
                 </button>
               </form>
-              <div class="rounded-lg mt-10 overflow-hidden">
+              <div className="rounded-lg mt-10 overflow-hidden">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.316946694085!2d76.64159757545292!3d28.197681575904962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d4fffaaaaaaab%3A0xdc28911a966052b0!2sCHANCHAL%20VEER%20FOUNDATION!5e0!3m2!1sen!2sin!4v1719377663639!5m2!1sen!2sin"
-                        width="100%" height="480" style={{border: 0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        width="100%" height="480" style={{border: 0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
           </div>

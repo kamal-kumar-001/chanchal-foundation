@@ -33,7 +33,7 @@ export default function Index({params}) {
 
     const doc = new jsPDF();
 
-    doc.text("Donation Receipt", 20, 20);
+    doc.text("Donation Receipt from Chanchal Veer Foundation", 20, 20);
     autoTable(doc, {
       startY: 30,
       head: [['Field', 'Details']],

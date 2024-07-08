@@ -18,11 +18,9 @@ const DonatorSchema = new mongoose.Schema({
   },
   address: {
     type: String,
-    required: true
   },
   pincode: {
     type: String,
-    required: true
   },
   pancard: {
     type: String,

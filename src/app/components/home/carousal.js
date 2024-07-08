@@ -3,10 +3,14 @@ import { useState, useEffect, useRef } from "react";
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const slides = [
-    "/carousal/slider-0.png",
-    "/carousal/slider-1.png",
-    "/carousal/slider-2.png",
-    "/carousal/slider-3.png",
+    // "/carousal/slider-0.png",
+    // "/carousal/slider-1.png",
+    // "/carousal/slider-2.png",
+    // "/carousal/slider-3.png",
+    // "/carousal/Realistic.png",
+    "/carousal/Realistic2.png",
+    "/carousal/Realistic3.png",
+    "/carousal/Realistic4.png",
   ];
 
   const slideInterval = useRef();
@@ -26,10 +30,6 @@ const Carousel = () => {
     if (slideInterval.current) {
       clearInterval(slideInterval.current);
     }
-  };
-
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
   };
 
   const goToPreviousSlide = () => {
@@ -72,7 +72,7 @@ const Carousel = () => {
 
       <div className="mx-auto">
         <div className="relative">
-          <div className="overflow-hidden relative h-[170px] rounded-lg sm:h-[330px] md:h-[400px] xl:h-[550px] 2xl:h-[600px]">
+          <div className="overflow-hidden relative h-[250px] rounded-lg sm:h-[330px] md:h-[400px] xl:h-[550px] 2xl:h-[600px]">
             {slides.map((slide, index) => (
               <div
                 key={index}
