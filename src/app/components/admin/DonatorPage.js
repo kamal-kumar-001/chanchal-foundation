@@ -18,7 +18,8 @@ const DonatorPage = () => {
 
                 const result = await response.json();
                 if (result.success) {
-                    setDonator(result.donators);
+                    const sortedDonators = result.donators.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+                    setDonator(sortedDonators);
                 } else {
                     console.error('Failed to fetch donator:', result.message);
                 }
@@ -42,10 +43,10 @@ const DonatorPage = () => {
         // Implement search functionality if required
     };
 
-    const tableHeaderTitleList = ['Name', 'Email', 'Phone', 'Amount', 'Date'];
+    const tableHeaderTitleList = ['Name', 'Email', 'Phone', 'Amount','Status', 'Date'];
     return (
         <MainLayout>
-            <div className="min-h-screen flex items-center justify-center bg-gray-50  py-12 px-4 sm:px-6 lg:px-8">
+            <div className="min-h-screen flex justify-center bg-gray-50  py-12 px-4 sm:px-6 lg:px-8">
                     <DataTable
                         dataListName="List of Donator"
                         searchKeywordOnSubmitHandler={searchKeywordOnSubmitHandler}
@@ -70,6 +71,9 @@ const DonatorPage = () => {
                                 </td>
                                 <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     {donator.amount}
+                                </td>
+                                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    {donator.paymentStatus ? "Paid":'Unpaid'}
                                 </td>
                                 <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     {new Date(donator.createdAt).toLocaleDateString()}

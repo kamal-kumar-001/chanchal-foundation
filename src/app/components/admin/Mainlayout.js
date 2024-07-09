@@ -1,4 +1,3 @@
-// import React from "react";
 import Footer from "../home/footer";
 import Navbar from "../home/navbar";
 
@@ -12,8 +11,8 @@ const MainLayout = ({ children }) => {
   ]
   return (
     <>
-      <Navbar navigation={navigation} />
-      {children}
+    <Navbar navigation={navigation} />
+        {children}
       <Footer />
     </>
   );

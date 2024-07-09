@@ -1,6 +1,7 @@
 "use client";
 import Head from "next/head";
-import ResourcePage from "../components/pages/resource";
+import Vision from "../components/pages/Vision";
+
 
 
 export default function Index() {
@@ -34,7 +35,7 @@ export default function Index() {
         />
         <meta property="twitter:image" content="https://chanchalveer.org/og.png" />
       </Head>
-      <ResourcePage />
+      <Vision />
     </>
   );
 }

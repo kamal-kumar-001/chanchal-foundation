@@ -1,53 +1,25 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import AdminPage from "../components/admin/AdminPage";
 import Loading from "../components/admin/loading";
+import { signIn, useSession } from 'next-auth/react';
 
 export default function Index() {
-    const router = useRouter();
+    const { data: session, status } = useSession();
     const [loading, setLoading] = useState(true);
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useEffect(() => {
-        const checkAuth = async () => {
-            const token = localStorage.getItem('token');
+        if (status === 'loading') {
+            return; // Do nothing while loading
+        }
 
-            if (!token) {
-                router.push('/login');
-                return;
-            }
-
-            try {
-                const response = await fetch('/api/auth/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
-                    }
-                });
-                
-                if (response.ok) {
-                    const result = await response.json();
-                    if (result.isAdmin) {
-                        setIsAuthenticated(true);
-                    } else {
-                        router.push('/login');
-                    }
-                } else {
-                    router.push('/login');
-                }
-            } catch (error) {
-                console.error('Error verifying token:', error);
-                router.push('/login');
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        checkAuth();
-    }, [router]);
+        if (!session) {
+            signIn(); // Redirect to the login page
+        } else {
+            setLoading(false); // User is authenticated
+        }
+    }, [session, status]);
 
     if (loading) {
         return <Loading />;
@@ -55,7 +27,7 @@ export default function Index() {
 
     return (
         <>
-            {isAuthenticated ? <AdminPage /> : <Loading />}
+            {session ? <AdminPage /> : <Loading />}
         </>
     );
 }

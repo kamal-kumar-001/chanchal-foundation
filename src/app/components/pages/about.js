@@ -1,13 +1,16 @@
 import SectionTitle from "../home/sectionTitle";
 import MainLayout from "./MainLayout";
 import ResourcePage from "./resource";
+import Image from "next/image";
 
 const AboutPage = () => {
   return (
     <MainLayout>
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50  py-12 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center">
-          <img className="mix-blend-multiply pb-12 w-1/2 h-1/3" src='/about_img.png' alt="about_img" />
+          <Image width={500} 
+                height={500} 
+                className="mix-blend-multiply pb-12 w-1/2 h-1/3" src='/about_img.png' alt="about_img" />
         </div>
         <div className="!text-center mx-auto space-y-3 ">
             <p className="text-xl ">

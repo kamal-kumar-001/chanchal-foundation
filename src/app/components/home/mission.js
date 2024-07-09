@@ -1,4 +1,4 @@
-import React from "react";
+import Image from 'next/image';
 
 const features = [
   {
@@ -60,7 +60,8 @@ const Missions = () => {
         {features.map((feature, index) => (
           <div className="flex gap-4 items-start" key={index}>
             <span className="">
-              <img className="mix-blend-multiply w-20" src={feature.svg} alt={feature.title} />
+              <Image  width={500} 
+              height={500} className="mix-blend-multiply w-20" src={feature.svg} alt={feature.title} />
             </span>
             <div>
               <h3 className="font-semibold text-2xl" style={{ color: feature.color }}>

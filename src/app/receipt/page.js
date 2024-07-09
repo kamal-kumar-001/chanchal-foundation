@@ -36,7 +36,9 @@ export default function Index() {
         <meta property="twitter:image" content="https://chanchalveer.org/og.png" />
       </Head>
       <MainLayout>
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <ReceiptPage />
+      </div>
     </MainLayout>
     </>
   );

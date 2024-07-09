@@ -1,14 +1,12 @@
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Navbar({ navigation }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
 
-  // const token = localStorage.getItem('token');
-  // if (token) {
-  //   setIsLogin(true)
-  // }
+  const { data: session } = useSession();
 
   const nav = [
     { name: "About Us", href: "/about-us" },
@@ -24,7 +22,7 @@ export default function Navbar({ navigation }) {
         <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
           <Link href="/">
             <span className="flex items-center space-x-2 text-2xl font-medium text-[#ff5722]">
-              <img src="/logo.png" alt="logo image" className="w-36 md:w-44 lg:w-44" />
+              <Image src="/logo.png" width={176} height={44} alt="logo image" className="w-36 md:w-44 lg:w-44" />
             </span>
           </Link>
           <div className="flex gap-2 items-center">
@@ -77,7 +75,7 @@ export default function Navbar({ navigation }) {
                 Make a Contribution
               </button>
             </Link>
-            {isLogin ? (<Link href="/dashboard">
+            {session ? (<Link href="/dashboard">
             <span className="px-6 py-2 text-white bg-[#ff5722] rounded-md md:ml-5">
               Dashboard
             </span>
@@ -110,7 +108,7 @@ export default function Navbar({ navigation }) {
               Contribute
             </span>
           </Link>
-          {isLogin ? (<Link href="/dashboard">
+          {session ? (<Link href="/dashboard">
             <span className="px-6 py-2 text-white bg-[#ff5722] rounded-md md:ml-5">
               Dashboard
             </span>

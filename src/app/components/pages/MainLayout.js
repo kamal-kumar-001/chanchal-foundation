@@ -1,4 +1,4 @@
-// import React from "react";
+'use client';
 import Footer from "../home/footer";
 import Navbar from "../home/navbar";
 

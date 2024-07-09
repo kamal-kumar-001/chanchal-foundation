@@ -1,13 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import MainLayout from './pages/MainLayout';
-
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 const Signup = () => {
+    const router = useRouter();
+    const { data: session, status } = useSession();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
-
+    useEffect(() => {
+        if (status === 'authenticated') {
+            router.push('/dashboard');
+        }
+    }, [session, status, router]);
     const onSubmit = async (data) => {
         try {
             const response = await fetch('/api/member', {
@@ -39,7 +47,9 @@ const Signup = () => {
             <div className="min-h-screen flex items-center justify-center bg-gray-50  py-12 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-md w-full space-y-8">
                     <div className='flex justify-center'>
-                        <img
+                        <Image
+                        width={200} 
+                        height={50}
                             src="/logo.png"
                             alt="logo image"
                             className="w-48"

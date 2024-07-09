@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Heading from './heading';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const WorkGallery = () => {
   const [imageGalleryOpened, setImageGalleryOpened] = useState(false);
@@ -94,7 +95,9 @@ const WorkGallery = () => {
           <ul ref={galleryRef} id="gallery" className="grid grid-cols-2 gap-5 lg:grid-cols-5">
             {images.map((src, index) => (
               <li key={index}>
-                <img
+                <Image
+                 width={1024} 
+                 height={500}
                   onClick={() => imageGalleryOpen(index)}
                   src={src}
                   className="object-cover select-none w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[5/6] lg:aspect-[2/3] xl:aspect-[3/4]"
@@ -128,7 +131,9 @@ const WorkGallery = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
               </div>
-              <img
+              <Image
+              width={1024} 
+              height={720}
                 className="object-contain object-center w-full h-full select-none cursor-zoom-out"
                 src={imageGalleryActiveUrl}
                 alt=""

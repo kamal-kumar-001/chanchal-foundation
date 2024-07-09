@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Work = () => {
     const workImages = [
@@ -22,7 +23,9 @@ const Work = () => {
                 <div className="overflow-x-auto  scroll-hidden flex space-x-4 sm:space-x-8 md:space-x-10 lg:space-x-12">
                     {workImages.map((item, index) => (
                         <div key={index} className="flex-none" style={{ width: "250px" }}>
-                            <img
+                            <Image
+                             width={1024} 
+                             height={520}
                                 src={item}
                                 className="object-cover select-none w-full h-auto bg-gray-200 rounded  aspect-[5/6] lg:aspect-[2/3] xl:aspect-[3/4]"
                                 alt={`photo gallery image ${index + 1}`}

@@ -1,16 +1,13 @@
 import { useState, useEffect, useRef } from "react";
+import Image from 'next/image';
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const slides = [
-    // "/carousal/slider-0.png",
-    // "/carousal/slider-1.png",
-    // "/carousal/slider-2.png",
-    // "/carousal/slider-3.png",
-    // "/carousal/Realistic.png",
-    "/carousal/Realistic2.png",
-    "/carousal/Realistic3.png",
     "/carousal/Realistic4.png",
+    "/carousal/Realistic5.png",
+    "/carousal/Realistic6.png",
+    "/carousal/Realistic7.png",
   ];
 
   const slideInterval = useRef();
@@ -23,7 +20,7 @@ const Carousel = () => {
   const startSlideTimer = () => {
     slideInterval.current = setInterval(() => {
       goToNextSlide();
-    }, 5000); // Changed to 5000ms (5 seconds)
+    }, 10000); // Changed to 5000ms (5 seconds)
   };
 
   const stopSlideTimer = () => {
@@ -72,7 +69,7 @@ const Carousel = () => {
 
       <div className="mx-auto">
         <div className="relative">
-          <div className="overflow-hidden relative h-[250px] rounded-lg sm:h-[330px] md:h-[400px] xl:h-[550px] 2xl:h-[600px]">
+          <div className="overflow-hidden relative h-[250px] rounded-lg sm:h-[350px] md:h-[500px] xl:h-[600px] 2xl:h-[600px]">
             {slides.map((slide, index) => (
               <div
                 key={index}
@@ -80,7 +77,8 @@ const Carousel = () => {
                   }`}
                 style={{ transitionDuration: "1s" }}
               >
-                <img src={slide} className="block w-full h-full object-cover" alt={`Slide ${index + 1}`} />
+                <Image  width={1440} 
+              height={720} src={slide} className="block w-full h-full object-cover" alt={`Slide ${index + 1}`} />
               </div>
             ))}
           </div>

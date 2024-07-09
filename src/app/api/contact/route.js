@@ -1,5 +1,6 @@
-import connectDB from '../../../../middleware/mongoose';
+// import connectDB from '../../../../middleware/mongoose';
 import Contact from '../../../../Models/Contact';
+import { connectDB } from '../../../../middleware/mongoose';
 
 // Get all contacts
 export async function GET(req) {

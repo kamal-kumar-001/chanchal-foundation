@@ -1,4 +1,4 @@
-import connectDB from '../../../../middleware/mongoose';
+import {connectDB} from '../../../../middleware/mongoose';
 import Donator from '../../../../Models/Donator';
 
 export async function GET(req) {

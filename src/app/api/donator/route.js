@@ -1,4 +1,4 @@
-import connectDB from '../../../../middleware/mongoose';
+import {connectDB} from '../../../../middleware/mongoose';
 import Donator from '../../../../Models/Donator';
 
 // Get all donators

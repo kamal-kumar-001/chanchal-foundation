@@ -45,7 +45,7 @@ const MemberPage = () => {
     const tableHeaderTitleList = ['Name', 'Email', 'Admin', 'Date'];
     return (
         <MainLayout>
-            <div className="min-h-screen flex items-center justify-center bg-gray-50  py-12 px-4 sm:px-6 lg:px-8">
+            <div className="min-h-screen flex  justify-center bg-gray-50  py-12 px-4 sm:px-6 lg:px-8">
                     <DataTable
                         dataListName="List of Members"
                         searchKeywordOnSubmitHandler={searchKeywordOnSubmitHandler}
