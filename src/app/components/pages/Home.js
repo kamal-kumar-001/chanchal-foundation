@@ -8,27 +8,32 @@ import Link from "next/link";
 import Heading from "../heading";
 import Work from "../home/work";
 import ResourcePage from "./resource";
+import Vision from "../home/Vision";
 
 export default function Home() {
   return (
     <MainLayout>
       <Carousel />
-        <SectionTitle
-          pretitle=""
-          title="Chanchal Veer foundation">
-          Founded in memory of Chanchal Yadav by Vijay Veer Sunaria, Chanchal Veer Foundation is dedicated to social service, organizing medical and blood donation camps.
-<br />
-<br />
-          The Foundation, registered with the Ministry of Corporate Affairs, also provides free blood to girls under one year old in Rewari, aiming to improve medical conditions in society. Haryanvi actor Kuldeep Kaushik (KD), our brand ambassador, attended the camp, which was praised by all participants.
-          <br />
-<br />
-          Vijay Veer Sunaria encourages everyone to join the Foundation to enhance our social service efforts, with many community members already pledging their support.<br />
-          <Link href='/about-us' className="text-[#ff5722] ">
-            read more &gt;
-          </Link>
-        </SectionTitle>
-        <ImpactSection />
-        <Missions />
+      <SectionTitle
+        pretitle=""
+        title="Chanchal Veer foundation">
+        Founded In the memories of late Chanchal yadav. By Vijay Veer Sunariya and Nidhi, Chanchal Veer Foundation is dedicated to social service, organizing medical and blood donation camps.
+        <br />
+        <br />
+
+        The Foundation, registered with the Ministry of Corporate Affairs, also provides free blood to girls under one year old in Rewari, aiming to improve medical conditions in society. Haryanvi actor Kuldeep Kaushik (KD), our brand ambassador, attended the camp, which was praised by all participants.
+        <br />
+        <br />
+        Vijay Veer Sunaria encourages everyone to join the Foundation to enhance our social service efforts, with many community members already pledging their support.<br />
+        <Link href='/about-us' className="text-[#ff5722] ">
+          read more &gt;
+        </Link>
+      </SectionTitle>
+      <ImpactSection />
+      <Missions />
+      <SectionTitle title="DREAM PROJECT">
+      </SectionTitle>
+      <Vision />
       <SectionTitle title="OUR WORK">
       </SectionTitle>
       <Work />

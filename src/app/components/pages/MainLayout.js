@@ -11,7 +11,7 @@ const MainLayout = ({ children }) => {
       ]
     },
     { name: 'Our Work', href: '/our-work', subNav: [] },
-    // { name: 'Resource Center', href: '/resource-center', subNav: [] },
+    { name: 'Our Team', href: '/our-team', subNav: [] },
     { name: 'Contact Us', href: '/contact-us', subNav: [] },
   ];
   return (

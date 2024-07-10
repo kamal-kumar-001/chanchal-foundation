@@ -35,7 +35,7 @@ const DashboardLayout = ({ user }) => {
               <p><strong>Rs:</strong> {user.donation || 'N/A'}</p>
               <hr className="my-6 border-t border-gray-300" />
               <h2 className="text-2xl font-semibold my-2">Tax Certificates</h2>
-              <Link href="/contact">
+              <Link href="/contact-us">
                         <span className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
                          Request Tax Certificates
                         </span>

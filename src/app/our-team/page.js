@@ -1,6 +1,7 @@
 "use client";
 import Head from "next/head";
-import Vision from "../components/pages/Vision";
+import Team from "../components/pages/Team";
+import MainLayout from "../components/pages/MainLayout";
 
 
 
@@ -35,7 +36,9 @@ export default function Index() {
         />
         <meta property="twitter:image" content="https://chanchalveer.org/og.png" />
       </Head>
-      <Vision />
+      <MainLayout>
+      <Team />
+      </MainLayout>
     </>
   );
 }

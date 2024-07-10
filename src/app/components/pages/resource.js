@@ -16,7 +16,7 @@ const ResourcePage = () => {
     },
     {
       name: 'Dr. Sanjeev Arora',
-      role: '3rd Director',
+      role: 'Chair Person',
       imgSrc: '/doctor.png',
       quote: "Your health is our priority. Free health check-ups for a healthier tomorrow."
     },

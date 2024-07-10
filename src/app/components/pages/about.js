@@ -26,21 +26,17 @@ const AboutPage = () => {
             </p>
             <hr className=" mx-auto max-w-96  border-b-2 border-orange-600 "/>
             <div className="flex justify-center  mx-auto mt-6 space-x-5 text-orange-500">
-                  <a href="https://twitter.com/" target="_blank" rel="noopener">
-                    <span className="sr-only">Twitter</span>
-                    <Twitter />
-                  </a>
-                  <a href="https://facebook.com/" target="_blank" rel="noopener">
+            <a href="https://www.facebook.com/people/Chanchal-veer-foundation/100080059512739/" target="_blank" rel="noopener">
                     <span className="sr-only">Facebook</span>
                     <Facebook />
                   </a>
-                  <a href="https://instagram.com/" target="_blank" rel="noopener">
+                  <a href="https://www.instagram.com/chanchal_veer_foundation/" target="_blank" rel="noopener">
                     <span className="sr-only">Instagram</span>
                     <Instagram />
                   </a>
-                  <a href="https://linkedin.com/" target="_blank" rel="noopener">
-                    <span className="sr-only">Linkedin</span>
-                    <Linkedin />
+                  <a href="https://www.youtube.com/@chanchalveersunariya8897" target="_blank" rel="noopener">
+                    <span className="sr-only">Youtube</span>
+                    <Youtube />
                   </a>
                 </div>
           </div>
@@ -48,7 +44,7 @@ const AboutPage = () => {
       </SectionTitle>
       <ResourcePage />
         <p className="text-gray-800 text-xl mt-5 container">
-          Established in memory of Chanchal Yadav by the Vijay Veer Sunaria, Chanchal Veer Foundation is a dedicated organization impacting numerous lives through various social service initiatives. We organize medical and blood donation camps, providing free health checkups and medicines to the underprivileged.
+          Established in the memories of late Chanchal yadav. By Vijay Veer Sunariya and Nidhi, Chanchal Veer Foundation is a dedicated organization impacting numerous lives through various social service initiatives. We organize medical and blood donation camps, providing free health checkups and medicines to the underprivileged.
           <br />
           <br />
           Recently, a free health checkup and blood donation camp was organized at the site of Chanchal Yadav&apos;s statue in village Java. During the camp, 350 patients were examined and provided with medicines, and 49 units of blood were collected. This event was supported by Dr. Sanjeev Kumar Arora and Jogendra Singh Memorial Blood Bank, with significant assistance from the Rewari team.
@@ -66,16 +62,6 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-const Twitter = ({ size = 24 }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="currentColor">
-    <path d="M24 4.37a9.6 9.6 0 0 1-2.83.8 5.04 5.04 0 0 0 2.17-2.8c-.95.58-2 1-3.13 1.22A4.86 4.86 0 0 0 16.61 2a4.99 4.99 0 0 0-4.79 6.2A13.87 13.87 0 0 1 1.67 2.92 5.12 5.12 0 0 0 3.2 9.67a4.82 4.82 0 0 1-2.23-.64v.07c0 2.44 1.7 4.48 3.95 4.95a4.84 4.84 0 0 1-2.22.08c.63 2.01 2.45 3.47 4.6 3.51A9.72 9.72 0 0 1 0 19.74 13.68 13.68 0 0 0 7.55 22c9.06 0 14-7.7 14-14.37v-.65c.96-.71 1.79-1.6 2.45-2.61z" />
-  </svg>
-);
 
 const Facebook = ({ size = 24 }) => (
   <svg
@@ -98,13 +84,9 @@ const Instagram = ({ size = 24 }) => (
   </svg>
 );
 
-const Linkedin = ({ size = 24 }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="currentColor">
-    <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.27 20.1H3.65V9.24h3.62V20.1zM5.47 7.76h-.03c-1.22 0-2-.83-2-1.87 0-1.06.8-1.87 2.05-1.87 1.24 0 2 .8 2.02 1.87 0 1.04-.78 1.87-2.05 1.87zM20.34 20.1h-3.63v-5.8c0-1.45-.52-2.45-1.83-2.45-1 0-1.6.67-1.87 1.32-.1.23-.11.55-.11.88v6.05H9.28s.05-9.82 0-10.84h3.63v1.54a3.6 3.6 0 0 1 3.26-1.8c2.39 0 4.18 1.56 4.18 4.89v6.21z" />
-  </svg>
+const Youtube = ({ size = 24 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} fill="currentColor"  viewBox="0 0 16 16">
+  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+</svg>
 );
+            

@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const slides = [
-    "/carousal/Realistic4.png",
+    // "/carousal/Realistic4.png",
     "/carousal/Realistic5.png",
     "/carousal/Realistic6.png",
     "/carousal/Realistic7.png",
@@ -84,7 +84,7 @@ const Carousel = () => {
           </div>
           <button
             type="button"
-            className="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+            className="md:flex lg:flex xl:flex hidden absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
             onClick={goToPreviousSlide}
           >
             <span className="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-500 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
@@ -102,7 +102,7 @@ const Carousel = () => {
           </button>
           <button
             type="button"
-            className="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+            className="md:flex lg:flex xl:flex hidden absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
             onClick={goToNextSlide}
           >
             <span className="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-gray-500 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">

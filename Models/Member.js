@@ -18,6 +18,12 @@ const MemberSchema = new mongoose.Schema({
     unique: true,
     trim: true
   },
+  phone: {
+    type: Number,
+    // required: true,
+    // unique: true,
+    trim: true
+  },
   password: {
     type: String,
     required: true,

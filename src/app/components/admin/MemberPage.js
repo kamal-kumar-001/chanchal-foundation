@@ -42,7 +42,7 @@ const MemberPage = () => {
         // Implement search functionality if required
     };
 
-    const tableHeaderTitleList = ['Name', 'Email', 'Admin', 'Date'];
+    const tableHeaderTitleList = ['Name', 'Email', 'Phone', 'Admin', 'Date'];
     return (
         <MainLayout>
             <div className="min-h-screen flex  justify-center bg-gray-50  py-12 px-4 sm:px-6 lg:px-8">
@@ -65,9 +65,9 @@ const MemberPage = () => {
                                 <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     {member.email}
                                 </td>
-                                {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     {member.phone}
-                                </td> */}
+                                </td>
                                 <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                     {member.isAdmin ? 'true' : 'false'}
                                 </td>

@@ -48,8 +48,8 @@ const Signup = () => {
                 <div className="max-w-md w-full space-y-8">
                     <div className='flex justify-center'>
                         <Image
-                        width={200} 
-                        height={50}
+                            width={200}
+                            height={50}
                             src="/logo.png"
                             alt="logo image"
                             className="w-48"
@@ -103,6 +103,26 @@ const Signup = () => {
                                     </span>
                                 )}
                             </div>
+                            <div>
+                                <label htmlFor="phone-number" className="sr-only">
+                                    Phone Number
+                                </label>
+                                <input
+                                    id="phone-number"
+                                    name="phone-number"
+                                    type="tel"
+                                    autoComplete="tel"
+                                    {...register("phone", { required: true })}
+                                    className={`appearance-none rounded-none relative block w-full px-3 py-2 border ${errors.phone ? "border-red-500" : "border-gray-300"} placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#ff5722] focus:border-[#ff5722] focus:z-10 sm:text-sm`}
+                                    placeholder="Phone number"
+                                />
+                                {errors.phone && (
+                                    <span className="text-red-500 text-sm mt-1">
+                                        Phone number is required
+                                    </span>
+                                )}
+                            </div>
+
                             <div>
                                 <label htmlFor="password" className="sr-only">
                                     Password
