@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const DonatorSchema = new mongoose.Schema({
+  txnid: { 
+    type: String, 
+    required: true, 
+    unique: true },
   name: {
     type: String,
     required: true,

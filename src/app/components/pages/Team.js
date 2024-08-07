@@ -56,7 +56,7 @@ const Team = () => {
                 width={384} 
                 height={384}
                   src='/chanchal.jpeg'
-                  alt={`chanchal logo`}
+                  alt={`chanchal photo`}
                   className="rounded-lg p-5  border-2 border-gray-300"
                 />
         </div>

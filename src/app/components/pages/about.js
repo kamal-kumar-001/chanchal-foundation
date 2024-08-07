@@ -40,6 +40,17 @@ const AboutPage = () => {
                   </a>
                 </div>
           </div>
+          <SectionTitle title="Late Chanchal Veer Sunariya">
+      </SectionTitle>
+        <div className='w-[306px] h-[496px] mb-5  mx-auto flex justify-center '>
+        <Image
+                width={306}
+                height={496}
+                  src='/chanchal3.jpeg'
+                  alt={`chanchal logo`}
+                  className="rounded-lg p-5  border-2 border-gray-300"
+                />
+        </div>
           <SectionTitle title="Our Team">
       </SectionTitle>
       <ResourcePage />
