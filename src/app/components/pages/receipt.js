@@ -92,6 +92,7 @@ const ReceiptPage = ({ member }) => {
                 <Link href={`/receipt/${receipt._id}`} key={receipt._id}>
                 <div  className="bg-white shadow-md rounded-lg p-6 my-6">
                   <h2 className="text-xl font-bold">Receipt #{receipt._id}</h2>
+                  <p><strong>Txn ID:</strong> {receipt.txnid}</p>
                   <p><strong>Name:</strong> {receipt.name}</p>
                   <p><strong>Email:</strong> {receipt.email}</p>
                   <p><strong>Phone:</strong> {receipt.phone}</p>

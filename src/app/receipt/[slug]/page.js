@@ -39,6 +39,7 @@ export default function Index({params}) {
       head: [['Field', 'Details']],
       body: [
         ['Receipt No.', donationDetails._id],
+        ['Txn Id', donationDetails.txnid],
         ['Name', donationDetails.name],
         ['Email', donationDetails.email],
         ['Phone', donationDetails.phone],
@@ -74,6 +75,10 @@ export default function Index({params}) {
           <div className="flex justify-between items-center">
             <span className="font-semibold">Name:</span>
             <span>{donationDetails.name}</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="font-semibold">Txn ID:</span>
+            <span>{donationDetails.txnid}</span>
           </div>
           <div className="flex justify-between items-center">
             <span className="font-semibold">Email:</span>

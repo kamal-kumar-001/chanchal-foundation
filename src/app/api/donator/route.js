@@ -5,7 +5,7 @@ import Donator from '../../../../Models/Donator';
 export async function GET(req) {
   await connectDB();
   try {
-    const donators = await Donator.find({}).sort({ amount: -1 });
+    const donators = await Donator.find({}).sort({ amount: -1 }).limit(20);
     return new Response(JSON.stringify({donators, success: true}), {
       status: 200,
       headers: {
